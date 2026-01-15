@@ -1,0 +1,77 @@
+<% layout('layouts/boilerplate.ejs') -%>
+<div class="row">
+    <div class="col-8 offset-2">
+        <br><br>
+        <h2>Create a new Listing</h2>
+    <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+<div>
+    <label class="form-label " for="title">Title</label>
+    <input name="listing[title]" placeholder="Enter a catchy title" class="form-control mb-3" required>
+    <div class="valid-feedback">Title looks good!</div>
+     <div class="invalid-feedback">Title is required</div>
+</div>
+
+
+<div>
+    <label class="form-label " for="description">Description</label>
+    <textarea name="listing[description]" placeholder="Enter Description" class="form-control mb-3" required></textarea>
+    <div class="invalid-feedback">Enter a short description</div>
+</div>
+
+<div class="mb-3">
+    <label class="form-label " for="image">Image</label>
+    <input name="listing[image]" type="file" placeholder="Upload Image " class="form-control ">
+    
+</div>
+
+
+<div class="row mb-3">
+    <div class="col-md-4">
+    <label class="form-label" for="price" >Price</label>
+    <input name="listing[price]" placeholder="1500" type="number" class="form-control" required>
+    <div class="invalid-feedback">Price is required</div>
+</div>
+
+
+
+    <div class="col-md-8"> 
+    <label class="form-label" for="country">Country</label>
+        <input name="listing[country]" placeholder="India" class="form-control" required>
+        <div class="invalid-feedback">Enter valid country</div>
+         </div>
+</div>
+
+<div>
+    <label class="form-label mb-3" for="location">Location</label>
+    <input name="listing[location]" placeholder="Jaipur,Rajasthan" class="form-control mb-3" required>
+     <div class="invalid-feedback">Enter valid location</div>
+</div>
+<br>
+<div class="mb-3">
+    <label class="form-label" for="category" >Category</label>
+    <select name="listing[category]" class="form-control" required>
+        <option value="">Select a category</option>
+        <option value="trending">Trending</option>
+        <option value="nature">Nature</option>
+        <option value="iconic cities">Iconic Cities</option>
+        <option value="mountains">Mountains</option>
+        <option value="camps">Camps</option>
+        <option value="pools">Pools</option>
+        <option value="beachfront">Beachfront</option>
+        <option value="arctic">Arctic</option>
+        <option value="pet-friendly">Pet-friendly</option>
+        <option value="luxury">Luxury</option>
+    </select>
+    <div class="invalid-feedback">Category is required</div>
+</div>
+
+         <br><br>
+        <button class="btn btn-dark add-btn mb-2">ADD</button>
+    </form>
+
+    </div>
+</div>
+
+
+
+    

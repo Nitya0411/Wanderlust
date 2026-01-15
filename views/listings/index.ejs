@@ -1,0 +1,94 @@
+<% layout('layouts/boilerplate') -%>
+<div id="filters">
+  <a href="/listings/category/trending" class="filter-link">
+    <div class="filter">
+      <div><i class="fa-solid fa-fire"></i></div>
+      <p>Trending</p>
+    </div>
+  </a>
+  <a href="/listings/category/nature" class="filter-link">
+    <div class="filter">
+      <div><i class="fa-solid fa-tree"></i></div>
+      <p>Nature</p>
+    </div>
+  </a>
+  <a href="/listings/category/iconic cities" class="filter-link">
+    <div class="filter">
+      <div><i class="fa-solid fa-city"></i></div>
+      <p>Iconic Cities</p>
+    </div>
+  </a>
+  <a href="/listings/category/mountains" class="filter-link">
+    <div class="filter">
+      <div><i class="fa-solid fa-mountain"></i></div>
+      <p>Mountains</p>
+    </div>
+  </a>
+  <a href="/listings/category/camps" class="filter-link">
+    <div class="filter">
+      <div><i class="fa-solid fa-campground"></i></div>
+      <p>Camps</p>
+    </div>
+  </a>
+  <a href="/listings/category/pools" class="filter-link">
+    <div class="filter">
+      <div><i class="fa-solid fa-person-swimming"></i></div>
+      <p>Pools</p>
+    </div>
+  </a>
+  <a href="/listings/category/beachfront" class="filter-link">
+    <div class="filter">
+      <div><i class="fa-solid fa-umbrella-beach"></i></div>
+      <p>Beachfront</p>
+    </div>
+  </a>
+  <a href="/listings/category/arctic" class="filter-link">
+    <div class="filter">
+      <div><i class="fa-solid fa-snowflake"></i></div>
+      <p>Arctic</p>
+    </div>
+  </a>
+  <a href="/listings/category/pet-friendly" class="filter-link">
+    <div class="filter">
+      <div><i class="fa-solid fa-paw"></i></div>
+      <p>Pet-friendly</p>
+    </div>
+  </a>
+  <a href="/listings/category/luxury" class="filter-link">
+    <div class="filter">
+      <div><i class="fa-regular fa-gem"></i></div>
+      <p>Luxury</p>
+    </div>
+  </a>
+  <div class="form-check form-switch">
+    <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxes</label>
+  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+  </div>
+</div>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+        <%for(listing of allListing){%>
+            <a href="/listings/<%=listing._id%>" class="listing_link">
+    <div class="card col listing-card" style="width: 25rem;">
+  <img src="<%=listing.image.url%>" class="card-img-top" alt="listing_image" style=" width: 250 rem;height: 20rem;">
+  <div class="card-img-overlay"></div>
+  <div class="card-body">
+    
+    <p class="card-text"> <b><%=listing.title%></b><br>
+        <span class="base-price">&#8377;<%=listing.price.toLocaleString("en-IN")%>/night</span>
+        <span class="total-price" style="display: none;">&#8377;<%=(listing.price * 1.18).toLocaleString("en-IN")%>/night (including 18% GST)</span><br>
+       </p>
+  </div>
+</div>
+</a>
+    <%}%>
+
+    </div>
+
+    <script>
+      let taxswitch = document.getElementById('flexSwitchCheckDefault');
+      taxswitch.addEventListener('click', () => {
+        document.querySelectorAll('.total-price, .base-price').forEach(el => {
+          el.style.display = el.style.display === 'none' ? 'inline' : 'none';
+        });
+      });
+    </script>
