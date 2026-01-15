@@ -80,16 +80,21 @@ app.use((req, res, next) => {
 });
 
 
+// HOME REDIRECT
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
+
 // ROUTES
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
 
-
-//ERROR HANDLING
+// 404 HANDLER (must be LAST)
 app.all("/", (req, res, next) => {
   next(new ExpressError("Page Not Found", 404));
 });
+
 
 app.use((err, req, res, next) => {
   const { statusCode = 500, message = "Something went wrong" } = err;
