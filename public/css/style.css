@@ -248,7 +248,7 @@ footer {
     color: inherit;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 100%) {
   .navbar-collapse {
     background: white;
     padding: 1rem;
