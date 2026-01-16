@@ -1,7 +1,7 @@
 
 /* NAVBAR */
 .navbar{
-    height:5rem;
+    min-height:5rem;
     background-color: white;
 
 }
@@ -14,6 +14,18 @@
 .nav-link{
     color:#222222 !important;
 }
+
+.navbar,
+footer {
+  width: 100%;
+  margin: 0;
+}
+
+.container-fluid {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 
 /*NEW*/
 
@@ -167,148 +179,8 @@
 .tax{
     display:none;
 }
-/* NAVBAR */
-.navbar{
-    height:5rem;
-    background-color: white;
-
-}
-
-.fa-compass{
-    color:#fe424d;
-    font-size:2rem;
-}
-
-.nav-link{
-    color:#222222 !important;
-}
-
-/*NEW*/
-
-.f-info-links a{
-    text-decoration: none;
-    color:#222222;
-
-}
-
-.f-info-links a:hover{
-    text-decoration: underline;
-    color:#222222;
-
-}
-
-.f-info-links{
-    width: 100%;
-}
-
-.f-info-socials{
-    width: 100%;
-    font-size: 1.2rem;
-    
-}
 
 
-.f-info-socials i{
-    margin-right: 1rem;
-}
-
-.f-info{
-    height:6rem;
-    background-color: #ebebeb;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    text-align: center;
-}
-
-.listing-card{
-    border: none !important;
-    margin-bottom: 2rem;
-      
-}
-
-.card-img-top{
-    border-radius: 1rem !important ;
-    width: 100%;
-    object-fit: cover !important;
-}
-
-.card-body {
-    padding:0 !important;
-
-}
-
-.card-text p{
-    font-weight: 400;
-    
-}
-
-.listing_link{
-    text-decoration: none;
-}
-
-.card-img-overlay{
-    opacity: 0;
-}
-
-.card-img-overlay:hover{
-    background-color: white;
-    opacity: 0.2;
-}
-
-.add-btn{
-    background-color: #fe424d !important;
-    border: none !important;
-}
-
-/*EDIT*/
-
-.edit-btn{
-    background-color: #fe424d !important;
-
-}
-
-/*SHOW IMAGE*/
-.show-img{
-    width: 100%;
-    max-height: 65vh;
-    object-fit: cover;
-    border-radius: 1.5rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    margin-bottom: 2rem;
-};
-
-.btns{
-    display:flex;
-   gap:10px;
-}
-.btns form {
-    display: inline-block;
-    margin: 0;
-}
-
-
-#map {
-    height: 400px;
-    width: 100%;
-    border-radius: 10px;
-    margin-top: 10px;
-  }
-
-#filters{
-    display:flex;
-    min-height:80px;
-    width:100%;
-   flex-wrap: nowrap;
-     justify-content: space-around;
-     align-items: center;
-     overflow-x: auto;
-    scrollbar-width: none;
-    padding: 10px 0;
-
-    
-}
 #filters::-webkit-scrollbar {
     display: none; 
 }
@@ -376,3 +248,21 @@
     color: inherit;
 }
 
+@media (max-width: 576px) {
+  .navbar-collapse {
+    background: white;
+    padding: 1rem;
+  }
+
+  .navbar-nav {
+    width: 100%;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 10px 0;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
