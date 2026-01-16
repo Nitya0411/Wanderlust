@@ -131,6 +131,12 @@ html, body {
   margin-right: 1rem;
 }
 
+.listing_link {
+  text-decoration: none;
+  color: inherit;
+}
+
+
 /* MAP */
 #map {
   width: 100%;
