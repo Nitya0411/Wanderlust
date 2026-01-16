@@ -266,3 +266,12 @@ footer {
     overflow-x: hidden;
   }
 }
+@media (min-width: 576px) {
+  .search-form {
+    width: 260px;
+  }
+
+  .search-form input {
+    width: 100%;
+  }
+}
