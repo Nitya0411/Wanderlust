@@ -38,6 +38,7 @@ html, body {
 .search-form {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
 }
 
@@ -130,6 +131,16 @@ html, body {
 
 .f-info-socials i {
   margin-right: 1rem;
+}
+
+.f-info-links a {
+  text-decoration: none;
+  color: inherit;
+  margin: 0 0.5rem;
+}
+
+.f-info-links a:hover {
+  text-decoration: underline;
 }
 
 .listing_link {
